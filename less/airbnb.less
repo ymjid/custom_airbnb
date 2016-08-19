@@ -83,7 +83,7 @@ body {
 }
 
 .no-padding {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 .arrow-svg {
@@ -139,11 +139,12 @@ h2 {
   font-size: 27px;
 }
 
-.weekend-box, .world-box, .guide-box {
+.weekend-box, .world-box, .guide-box, .community-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding:20px 0 20px 0;
 }
 
 
@@ -190,12 +191,38 @@ h2 {
   height:326px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  color:white;
+  .world-photo {
+    border-radius: 100%;
+    width:45px;
+    height:45px;
+    box-shadow: 0 0 0 2px white;
+  }
   .world-place {
     color:white;
     font-weight: bold;
     font-size:30px;
+  }
+  .world-loc-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .world-price {
+    background-color:rgba(45,45,45,0.9);
+    font-size: 30px;
+    align-self: flex-start;
+    padding:5px;
+    position:relative;
+    bottom:-45px;
+    .world-device {
+      font-size: 15px;
+      position: relative;
+      top:-9px;
+    }
   }
 }
 
@@ -206,8 +233,12 @@ h2 {
     background-image: url("../images/world_lisbonne.jpeg");
   }
   .world:nth-child(2) {
-    background-image: url("../images/world_loc1.jpeg");
+    background-image: url("../images/world_loc1.jpg");
     background-size: cover;
+    .world-photo:nth-child(1) {
+      background-image: url("../images/world_loc1_photo.jpg");
+      background-size: contain;
+    }
   }
   .world:nth-child(3) {
     background-image: url("../images/world_amsterdam.jpeg");
@@ -223,6 +254,10 @@ h2 {
   .world:nth-child(6) {
     background-image: url("../images/world_loc2.jpeg");
     background-size: cover;
+    .world-photo:nth-child(1) {
+      background-image: url("../images/world_loc2_photo.jpg");
+      background-size: contain;
+    }
   }
   .world:nth-child(7) {
     background-image: url("../images/world_rome.jpeg");
@@ -270,5 +305,251 @@ h2 {
   .guide:nth-child(3) {
     background-image: url("../images/guide_londres.jpg");
     background-size: cover;
+  }
+}
+
+.community {
+  padding: 20px 0 20px 0;
+  height:505px;
+  &:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &:nth-child(2) {
+    .community-header {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom:100%;
+      span {
+        padding:10px;
+        font-weight: bold;
+        background-color: #007a87;
+      }
+    }
+  }
+  &:nth-child(3) {
+    .community-header {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom:100%;
+      span {
+        padding:10px;
+        font-weight: bold;
+        background-color:#393c3d;
+      }
+    }
+  }
+  &:nth-child(4) {
+    .community-header {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom:100%;
+      span {
+        padding:10px;
+        font-weight: bold;
+        background-color:#7b0051;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 0 900px rgba(0, 0, 0, 0.4) inset;
+  }
+
+  .community-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      font-weight: bold;
+      padding: 5px;
+      text-align: center;
+    }
+    span {
+      padding:5px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+}
+
+.community-img {
+  margin:15px 0 15px 0;
+}
+
+.community-container {
+  color:white;
+  padding:30px 0 30px 0;
+  .community:nth-child(1) {
+    background-color: #00a699;
+  }
+  .community:nth-child(2) {
+    background-image: url("../images/community_img1.jpg");
+    background-size: cover;
+  }
+  .community:nth-child(3) {
+    background-image: url("../images/community_img2.jpg");
+    background-size: cover;
+  }
+  .community:nth-child(4) {
+    background-image: url("../images/community_img3.jpg");
+    background-size: cover;
+  }
+}
+
+.community-link {
+  color:white;
+  &:hover {
+    color:white;
+  }
+}
+.custom-item-size {
+  height:551px;
+  background-color:#ffb400;
+}
+
+.custom-carousel {
+  h2 {
+    font-size: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  span {
+    font-size: 25px;
+  }
+  p {
+    font-size: 25px;
+    text-align: left;
+    font-weight: bold;
+  }
+  p:nth-child(2) {
+    opacity: 0.7;
+  }
+}
+.center-carousel{
+  bottom:25%;
+}
+
+.custom-carousel-control {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 100%) !important;
+  background-repeat: no-repeat;
+  &:hover {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 100%) !important;
+    background-repeat: no-repeat;
+  }
+}
+
+.play-container {
+  i {
+    opacity:0.7;
+  }
+}
+
+.start-explore-container {
+  margin: 20px 0 20px 0;
+  .start-explore-button {
+    color:white;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    border:0px;
+    &:hover {
+      background-color: rgba(0,0,0,0.35);
+      border:0px;
+    }
+  }
+}
+
+.footer {
+  background-color: #484848;
+  color: white;
+  background-image: url(../images/footer_img.png);
+}
+
+.footer-select {
+  background-color: #484848;
+  color: white;
+  border:1px solid #484848;
+  font-size: 15px;
+  font-weight: bold;
+  option {
+    background-color: #484848;
+    color: white;
+  }
+}
+
+.footer-content {
+  padding: 30px 0 30px 0;
+}
+
+.footer-menu-list {
+  span {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-top: 10px;
+    padding:0px;
+    li {
+      list-style: none;
+    }
+  }
+  a {
+    color:white;
+    &:hover {
+      text-decoration: none;
+      color:#bbb;
+    }
+  }
+}
+
+.custom-social {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  h4 {
+    color:white;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    .social-link {
+      color:white;
+      margin:5px;
+      &:hover {
+        text-decoration: none;
+        .social-logo-container {
+          .social-logo {
+            color:#bbb;
+          }
+        }
+      }
+      .social-logo-container {
+        width:35px;
+        height:35px;
+        border-radius: 100%;
+        border: 1px solid rgba(255,255,255,0.2);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        .social-logo {
+          color:white;
+        }
+      }
+    }
+  }
+  span {
+    color:#757575;
+    padding-bottom: 50px;
+    margin: 20px 0 20px 0;
   }
 }
