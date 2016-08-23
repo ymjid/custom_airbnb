@@ -1,5 +1,10 @@
 // out: ../css/airbnb.css, sourcemap: true, compress: true
 
+@white : white;
+@search-color:#ff5a5f;
+@search-border-bottom : #e00007;
+@intro-color:#007a87;
+
 body {
   padding: 0;
   margin: 0;
@@ -10,17 +15,26 @@ body {
   float:left;
   margin-right: 0px;
   margin-left:15px;
-  border-color: white  !important;
+  border-color: @white  !important;
   .bar-color {
-    background-color:#ff5a5f !important;
+    background-color:@search-color !important;
   }
 }
 
-.flex_column {
+.flex_center {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.flex_column {
+  .flex_center;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .header_background {
@@ -30,7 +44,7 @@ body {
   background-position: center;
   padding-top: 100px;
   width:100%;
-  color:white;
+  color:@white;
   .header_content {
     padding: 100px 0 100px 0;
     h1 {
@@ -49,8 +63,7 @@ body {
     height:100px;
     background-color: rgba(0, 0, 0, 0.7);
     .custom-form {
-      display:flex;
-      flex-direction: row;
+      .flex-row;
     }
   }
 }
@@ -60,12 +73,13 @@ body {
 }
 
 .logo-container {
+  .flex_column;
   margin-left: 10px !important;
   border-right: 1px solid #c4c4c4;
 }
 
 .date-background {
-  background-color: white;
+  background-color: @white;
 }
 
 .host-button-container {
@@ -77,7 +91,7 @@ body {
   }
 }
 .custom-menu {
-  background-color: white;
+  background-color: @white;
   ul {
     li {
       padding: 0 10px 0 10px;
@@ -103,15 +117,15 @@ body {
 }
 
 .custom-search-button {
-  border-color: #ff5a5f;
-  border-bottom-color: #e00007;
-  background-color: #ff5a5f;
-  color:white;
+  border-color: @search-color;
+  border-bottom-color: @search-border-bottom;
+  background-color: @search-color;
+  color:@white;
   &:hover {
-    border-color: #ff7e82;
-    border-bottom-color: #fa0008;
-    background-color: #ff7e82;
-    color:white;
+    border-color: lighten(@search-color, 10%);
+    border-bottom-color: darken(@search-border-bottom, 10%);
+    background-color: lighten(@search-color, 10%);
+    color:@white;
   }
 }
 
@@ -126,12 +140,12 @@ body {
 }
 
 .custom-button-intro {
-  background-color:#007a87;
+  background-color:@intro-color;
   border-radius: 3px;
   margin:20px 0 20px 0;
   &:hover {
-    border-color:#009aab;
-    background-color:#009aab;
+    border-color:lighten(@intro-color, 5%);
+    background-color:lighten(@intro-color, 5%);
   }
 }
 
@@ -142,7 +156,7 @@ body {
 .feature-container {
   margin-top: 50px;
   margin-bottom: 50px;
-  background-color: white;
+  background-color: @white;
 }
 
 .intro {
@@ -159,50 +173,136 @@ h2 {
   font-size: 27px;
 }
 
-.weekend-box, .world-box, .guide-box, .community-box {
+.img-box {
   h2, p {
     text-align: center;
   }
 }
 
-.weekend {
+.weekend, .guide {
   background-repeat: no-repeat;
   background-size: cover;
   height:309px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .weekend-place {
-    color:white;
+  .weekend-place, .guide-place {
+    color:@white;
     font-weight: bold;
     font-size:30px;
   }
 }
 
-.weekend-padding, .world-padding, .guide-padding, .community-padding {
+.img-padding {
   padding: 0 14px 0 14px;
   margin-bottom: 20px;
 }
 
-.weekend-container, .world-container, .guide-container, .start-explore-container {
+.img-container {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.weekend-container {
-  .weekend-padding:nth-child(1){
+  .img-padding:nth-child(1){
     .weekend {
       background-image: url("../images/weekend_lille.jpeg");
     }
+    .world {
+      background-image: url("../images/world_lisbonne.jpeg");
+    }
+    .guide {
+      background-image: url("../images/guide_sanfrancisco.jpg");
+    }
+    .community {
+      background-color: #00a699;
+    }
   }
-  .weekend-padding:nth-child(2){
+  .img-padding:nth-child(2){
     .weekend {
       background-image: url("../images/weekend_bruxelles.jpeg");
     }
+    .world {
+      background-image: url("../images/world_loc1.jpg");
+      .world-photo {
+        background-image: url("../images/world_loc1_photo.jpg");
+        background-size: contain;
+      }
+    }
+    .guide {
+      background-image: url("../images/guide_newyork.jpg");
+    }
+    .community-header {
+      span {
+        background-color: @intro-color;
+      }
+    }
+    .community {
+      background-image: url("../images/community_img1.jpg");
+    }
   }
-  .weekend-padding:nth-child(3){
+  .img-padding:nth-child(3){
     .weekend {
       background-image: url("../images/weekend_londres.jpeg");
+    }
+    .world {
+      background-image: url("../images/world_amsterdam.jpeg");
+    }
+    .guide {
+      background-image: url("../images/guide_londres.jpg");
+    }
+    .community-header {
+      span {
+        background-color:#393c3d;
+      }
+    }
+    .community {
+      background-image: url("../images/community_img2.jpg");
+    }
+  }
+  .img-padding:nth-child(4) {
+    .world {
+      background-image: url("../images/world_newyork.jpeg");
+    }
+    .community-header {
+      span {
+        background-color:#7b0051;
+      }
+    }
+    .community {
+      background-image: url("../images/community_img3.jpg");
+    }
+  }
+  .img-padding:nth-child(5) {
+    .world {
+      background-image: url("../images/world_venise.jpg");
+      background-position: center;
+      background-size: inherit;
+    }
+  }
+  .img-padding:nth-child(6) {
+    .world {
+      background-image: url("../images/world_loc2.jpeg");
+      .world-photo {
+        background-image: url("../images/world_loc2_photo.jpg");
+        background-size: contain;
+      }
+    }
+  }
+  .img-padding:nth-child(7) {
+    .world {
+      background-image: url("../images/world_rome.jpeg");
+    }
+  }
+  .img-padding:nth-child(8) {
+    .world {
+      background-image: url("../images/world_berlin.jpeg");
+    }
+  }
+  .img-padding:nth-child(9) {
+    .world {
+      background-image: url("../images/world_bordeaux.jpeg");
+    }
+  }
+  .img-padding:nth-child(10) {
+    .world {
+      background-image: url("../images/world_biarritz.jpg");
+      background-position: center;
+      background-size: inherit;
     }
   }
 }
@@ -211,7 +311,7 @@ h2 {
   font-weight: bold;
   margin:30px 0 30px 0;
   &:hover {
-    background-color:#FFFFFF;
+    background-color:@white;
     border: 1px solid black;
   }
 }
@@ -221,22 +321,20 @@ h2 {
   background-repeat: no-repeat;
   height:326px;
   margin-bottom: 20px;
-  color:white;
+  color:@white;
   .world-photo {
     border-radius: 100%;
     width:45px;
     height:45px;
-    box-shadow: 0 0 0 2px white;
+    box-shadow: 0 0 0 2px @white;
   }
   .world-place {
-    color:white;
+    color:@white;
     font-weight: bold;
     font-size:30px;
   }
   .world-loc-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .flex_column;
   }
   .world-price {
     background-color:rgba(45,45,45,0.9);
@@ -253,101 +351,6 @@ h2 {
   }
 }
 
-.world-container {
-  .world-padding:nth-child(1) {
-    .world {
-      background-image: url("../images/world_lisbonne.jpeg");
-    }
-  }
-  .world-padding:nth-child(2) {
-    .world {
-      background-image: url("../images/world_loc1.jpg");
-      .world-photo {
-        background-image: url("../images/world_loc1_photo.jpg");
-        background-size: contain;
-      }
-    }
-  }
-  .world-padding:nth-child(3) {
-    .world {
-      background-image: url("../images/world_amsterdam.jpeg");
-    }
-  }
-  .world-padding:nth-child(4) {
-    .world {
-      background-image: url("../images/world_newyork.jpeg");
-    }
-  }
-  .world-padding:nth-child(5) {
-    .world {
-      background-image: url("../images/world_venise.jpg");
-      background-position: -79px;
-    }
-  }
-  .world-padding:nth-child(6) {
-    .world {
-      background-image: url("../images/world_loc2.jpeg");
-      .world-photo {
-        background-image: url("../images/world_loc2_photo.jpg");
-        background-size: contain;
-      }
-    }
-  }
-  .world-padding:nth-child(7) {
-    .world {
-      background-image: url("../images/world_rome.jpeg");
-    }
-  }
-  .world-padding:nth-child(8) {
-    .world {
-      background-image: url("../images/world_berlin.jpeg");
-    }
-  }
-  .world-padding:nth-child(9) {
-    .world {
-      background-image: url("../images/world_bordeaux.jpeg");
-    }
-  }
-  .world-padding:nth-child(10) {
-    .world {
-      background-image: url("../images/world_biarritz.jpg");
-      background-position: -79px;
-    }
-  }
-}
-
-.guide {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height:309px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .guide-place {
-    color:white;
-    font-weight: bold;
-    font-size:30px;
-  }
-}
-
-.guide-container {
-  .guide-padding:nth-child(1){
-    .guide {
-      background-image: url("../images/guide_sanfrancisco.jpg");
-    }
-  }
-  .guide-padding:nth-child(2){
-    .guide {
-      background-image: url("../images/guide_newyork.jpg");
-    }
-  }
-  .guide-padding:nth-child(3){
-    .guide {
-      background-image: url("../images/guide_londres.jpg");
-    }
-  }
-}
-
 .community {
   background-size: cover;
   height:505px;
@@ -356,9 +359,6 @@ h2 {
   }
 
   .community-header {
-    display:flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom:100%;
     span {
       padding:10px;
@@ -366,16 +366,19 @@ h2 {
     }
   }
 
+.community-text {
+  padding: 5px;
+  text-align: center;
+}
+
   .community-content {
     h3 {
       font-weight: bold;
-      padding: 5px;
-      text-align: center;
+      .community-text;
     }
     span {
-      padding:5px;
       box-sizing: border-box;
-      text-align: center;
+      .community-text;
     }
   }
 }
@@ -395,55 +398,19 @@ h2 {
 
 .active.day {
   background-color: #00A699;
-  color: white;
+  color: @white;
 }
 
 .community-container {
-  color:white;
+  color:@white;
   padding:30px 0 30px 0;
-  .community-padding:nth-child(1) {
-    .community {
-      background-color: #00a699;
-    }
-  }
-  .community-padding:nth-child(2) {
-    .community-header {
-      span {
-        background-color: #007a87;
-      }
-    }
-    .community {
-      background-image: url("../images/community_img1.jpg");
-    }
-  }
-  .community-padding:nth-child(3) {
-    .community-header {
-      span {
-        background-color:#393c3d;
-      }
-    }
-    .community {
-      background-image: url("../images/community_img2.jpg");
-    }
-  }
-  .community-padding:nth-child(4) {
-    .community-header {
-      span {
-        background-color:#7b0051;
-      }
-    }
-    .community {
-      background-image: url("../images/community_img3.jpg");
-    }
-  }
-
 }
 
 .community-link {
-  color:white;
+  color:@white;
   text-align: center;
   &:hover {
-    color:white;
+    color:@white;
   }
 }
 .custom-item-size {
@@ -472,13 +439,9 @@ h2 {
   bottom:25%;
 }
 
-.custom-carousel-control {
+.custom-carousel-control, .custom-carousel-control:hover {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 100%) !important;
   background-repeat: no-repeat;
-  &:hover {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 100%) !important;
-    background-repeat: no-repeat;
-  }
 }
 
 .play-container {
@@ -489,7 +452,7 @@ h2 {
 
 .start-explore-container {
   .start-explore-button {
-    color:white;
+    color:@white;
     background-color: rgba(255, 255, 255, 0.6);
     font-weight: bold;
     border:0px;
@@ -502,21 +465,17 @@ h2 {
 
 .footer {
   background-color: #2b2d2e;
-  color: white;
+  color: @white;
   background-image: url(../images/footer_img.png);
 }
 
 .footer-select {
   background-color: #484848;
-  color: white;
+  color: @white;
   border:1px solid #484848;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 20px;
-  option {
-    background-color: #484848;
-    color: white;
-  }
 }
 
 .footer-content {
@@ -536,7 +495,7 @@ h2 {
     }
   }
   a {
-    color:white;
+    color:@white;
     &:hover {
       text-decoration: none;
       color:#bbb;
@@ -547,17 +506,16 @@ h2 {
 .custom-social {
   border-top: 1px solid rgba(255,255,255,0.2);
   h4 {
-    color:white;
+    color:@white;
     font-weight: bold;
     margin: 20px 0 20px 0;
   }
   .social {
-    display: flex;
+    .flex-row;
     justify-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
     .social-link {
-      color:white;
+      color:@white;
       margin:5px;
       &:hover {
         text-decoration: none;
@@ -572,11 +530,8 @@ h2 {
         height:35px;
         border-radius: 100%;
         border: 1px solid rgba(255,255,255,0.2);
-        display:flex;
-        justify-content: center;
-        align-items: center;
         .social-logo {
-          color:white;
+          color:@white;
         }
       }
     }
@@ -589,7 +544,7 @@ h2 {
 }
 
 .custom-search-button-mobile {
-  background-color: white;
+  background-color: @white;
   width:66%;
   text-align: center;
   border-color: #c4c4c4;
@@ -628,16 +583,16 @@ h2 {
 
 @media all and (max-width: 767px) {
   .mobile-menu-container {
-    display: flex;
-    flex-direction: row;
+    .flex-row;
     justify-content: flex-start;
     align-items: center;
+
   }
 
   .custom-social {
     border-top: 0px;
   }
-  .weekend-padding, .world-padding, .guide-padding, .community-padding {
+  .img-padding{
     padding: 0;
     margin:0;
   }
@@ -648,11 +603,9 @@ h2 {
     padding: 0px;
   }
   .mobile-list {
-    display: flex;
+    .flex_center;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     li {
       font-weight: bold;
       margin:0 5px 0 5px;
@@ -660,10 +613,10 @@ h2 {
     }
   }
   .intro {
-    color:white;
+    color:@white;
     background-image: url("../images/img1_slider1.jpg");
     background-size: cover;
-    background-position:-176px;
+    background-position:center;
     box-shadow: 0 0 0 900px rgba(0, 0, 0, 0.4) inset;
     h2 {
       padding: 55px 25px 20px 25px !important;
@@ -712,8 +665,7 @@ h2 {
   .custom-form {
     justify-content: center;
     .mobile-search {
-      display: flex;
-      flex-direction: row;
+      .flex-row;
       justify-content: center;
       align-items: flex-start;
     }
@@ -766,16 +718,6 @@ h2 {
       padding: 5px 0 5px 0;
     }
   }
-  .world-container {
-    .world-padding {
-      &:nth-child(5), &:nth-child(10) {
-        .world {
-          background-position: center;
-          background-size: inherit;
-        }
-      }
-    }
-  }
   .community-content {
     h3, span {
       padding: 10px !important;
@@ -793,16 +735,6 @@ h2 {
 }
 
 @media all and (min-width: 1200px) {
-  .world-container {
-    .world-padding {
-      &:nth-child(5), &:nth-child(10) {
-        .world {
-          background-position: center;
-          background-size: inherit;
-        }
-      }
-    }
-  }
   .community-header {
     margin-bottom: 90% !important;
   }
