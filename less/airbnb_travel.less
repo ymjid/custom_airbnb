@@ -1,0 +1,263 @@
+// out: ../css/airbnb_travel.css, sourcemap: true, compress: true
+
+@white : white;
+@search-color:#ff5a5f;
+@search-border-bottom : #e00007;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  padding: 0px 0 50px 0;
+}
+
+.flex_column {
+  .flex_center;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.content-block {
+  padding: 60px 0 60px 0;
+}
+.custom-nav-header {
+  background-color: #393C3D !important;
+  margin: 0;
+  color:#82898d;
+}
+
+.custom-menu-logo {
+  width:100px;
+}
+
+.link-border {
+  border-left: 1px solid #c4c4c4;
+}
+
+.page {
+  color:@white !important;
+  background-color: #393C3D !important;
+}
+
+.navbar-nav {
+  .page {
+    color:@white !important;
+  }
+}
+
+.info-block {
+  background-color: #2D2D2D;
+  .content-block;
+  .info-title {
+    color:@white;
+    text-align: left;
+    font-weight: bold;
+    padding: 20px 0 20px 0;
+  }
+  .info-separator {
+    margin:20px 0 20px 0;
+    width:50px;
+    border-bottom: 3px solid #82898d;
+  }
+  .info-subtitle {
+    color:@white;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0 20px 0;
+  }
+  .info-text {
+    color:#82898d;
+  }
+}
+.like_home {
+  background-image: url("../images/travel_like_home.jpg");
+}
+.info-img {
+  background-size: cover;
+  background-position: center;
+  height:625px;
+
+}
+.info-img-size {
+  width:100%;
+}
+.header_background {
+  background-image: url(../images/travel_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 100px;
+  width:100%;
+  color:@white;
+  .header_content {
+    padding: 100px 0 100px 0;
+    h1 {
+      text-transform:uppercase;
+      font-size:60px;
+      font-weight: bold;
+    }
+    span {
+      font-size:15px;
+      font-weight: bold;
+      margin: 10px 0 10px 0;
+    }
+  }
+}
+.custom-menu {
+  ul {
+    li {
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+    .link {
+      .link-border {
+        border-left: 1px solid #c4c4c4;
+      }
+      &:hover {
+        background-color: darken(#393C3D, 20%) !important;
+        color:@white !important;
+      }
+    }
+  }
+}
+
+.custom-button {
+  height:50px;
+  width:150px;
+}
+
+.custom-search-button {
+  border-color: @search-color;
+  border-bottom-color: @search-border-bottom;
+  background-color: @search-color;
+  color:@white;
+  &:hover {
+    border-color: lighten(@search-color, 10%);
+    border-bottom-color: darken(@search-border-bottom, 10%);
+    background-color: lighten(@search-color, 10%);
+    color:@white;
+  }
+}
+
+.logo-container {
+  .flex_column;
+  border-right: 1px solid #c4c4c4;
+  &:hover {
+    background-color: darken(#393C3D, 20%) !important;
+  }
+}
+
+.logo-block {
+  .flex-row;
+  align-items: center;
+}
+.footer {
+  background-color: #2b2d2e;
+  color: @white;
+  background-image: url(../images/footer_img.png);
+}
+
+.footer-select {
+  background-color: #484848;
+  color: @white;
+  border:1px solid #484848;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-content {
+  padding: 30px 0 30px 0;
+}
+
+.footer-menu-list {
+  span {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-top: 10px;
+    padding:0px;
+    li {
+      list-style: none;
+    }
+  }
+  a {
+    color:@white;
+    &:hover {
+      text-decoration: none;
+      color:#bbb;
+    }
+  }
+}
+
+.custom-social {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  h4 {
+    color:@white;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
+  }
+  .social {
+    .flex-row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .social-link {
+      color:@white;
+      margin:5px;
+      &:hover {
+        text-decoration: none;
+        .social-logo-container {
+          .social-logo {
+            color:#bbb;
+          }
+        }
+      }
+      .social-logo-container {
+        width:35px;
+        height:35px;
+        border-radius: 100%;
+        border: 1px solid rgba(255,255,255,0.2);
+        .social-logo {
+          color:@white;
+        }
+      }
+    }
+  }
+  span {
+    color:#757575;
+    padding-bottom: 50px;
+    margin: 20px 0 20px 0;
+  }
+}
+
+.title {
+  font-weight: bold;
+}
+
+.text {
+  color:#82898d;
+}

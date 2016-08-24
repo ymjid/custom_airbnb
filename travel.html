@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Airbnb -Travel Affair</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="./css/airbnb_travel.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="./js/airbnb.js"></script> -->
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default custom-nav-header">
+      <div class="container-fluid no-padding">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-header">
+            <a class="navbar-brand logo-container" href="#">
+              <div class="logo-block">
+                <img class="custom-menu-logo" alt="Brand" src="./images/airbnb_logo2.png">
+                <span>business</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse custom-menu" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="page"><a class="link" href="#">Pour les voyageurs <span class="sr-only">(current)</span></a></li>
+            <li><a class="link" href="#">Pour les travel managers</a></li>
+            <li><a class="link" href="#">Pour les hôtes</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="link link-border" href="#">Aide</a></li>
+            <li><a class="link link-border" href="#">Inscription</a></li>
+            <li><a class="link link-border" href="#">Connexion</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="header_background">
+      <div class="header_content flex_column">
+        <h1>Chez vous, ailleurs : même en voyage d'affaires</h1>
+        <span>En voyages d'affaires, donnez le meilleur de vous-même.</span>
+        <button type="submit" class="btn btn-default custom-search-button custom-button custom-button-icon"><span>Démarrer</span></button>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="col-lg-12 content-block">
+        <h2>Les avantages d'Airbnb pour les entreprises</h2>
+        <div class="col-lg-offset-1 col-lg-10">
+          <div class="col-lg-4">
+            <div class="col-lg-12">
+              <div class="col-lg-3">
+                <i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
+              </div>
+              <div class="col-lg-9">
+                <p class="title">
+                  Défrayez ou facturez vos déplacements professionnels en tout simplicité
+                </p>
+                <p class="text">
+                  Si votre entreprise est inscrite au programme Airbnb pour les entreprises, vous pourrez directement imputer vos frais de voyage à votre entreprise.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="col-lg-12">
+              <div class="col-lg-3">
+                <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+              </div>
+              <div class="col-lg-9">
+                <p class="title">
+                  Séjournez dans un logement Business Travel Ready
+                </p>
+                <p class="text">
+                  Séjournez chez des hôtes qui ont amélioré leurs services et équipements pour accueillir des voyageurs d'affaires.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="col-lg-12">
+              <div class="col-lg-3">
+                <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
+              </div>
+              <div class="col-lg-9">
+                <p class="title">
+                  Recevez 44€ pour tout séjour Airbnb
+                </p>
+                <p class="text">
+                  Lors de votre premier déplacement professionnel avec Airbnb, vous recevrez un crédit de 44€ pour tout séjour Airbnb.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container-fluid no-padding">
+      <div class="col-lg-12 no-padding">
+        <div class="col-lg-5 info-block">
+          <div class="col-lg-12">
+            <h2 class="info-title">Comme à la maison, où que vous soyez</h2>
+            <div class="info-separator"></div>
+          </div>
+          <div class="col-lg-12">
+            <h3 class="info-subtitle">Des emplacements pratiques</h3>
+            <p class="info-text">Réservez dans le quartier qui vous arrange, à deux pas du bureau ou de votre restaurant préféré.</p>
+          </div>
+          <div class="col-lg-12">
+            <h3 class="info-subtitle">Des logements équipés</h3>
+            <p class="info-text">Retrouvez le Wi-Fi, une cuisine prête à l’emploi ainsi que d'autres éléments essentiels, pour un confort optimal.</p>
+          </div>
+          <div class="col-lg-12">
+            <h3 class="info-subtitle">Des prix abordables</h3>
+            <p class="info-text">Voyagez moins cher en cuisinant à la maison et en économisant sur les transports.</p>
+          </div>
+        </div>
+        <div class="col-lg-7 no-padding">
+          <div class="col-lg-12 info-img like_home">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container-fluid footer">
+      <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 ">
+        <div class="col-md-offset-2 col-md-8 col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-9 col-lg-offset-2 col-lg-8 footer-content">
+          <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4 no-padding-mobile">
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 no-padding-mobile">
+              <select class="form-control footer-select">
+                <option>Bahasa Indonesia</option>
+                <option>Bahasa Melayu</option>
+                <option>Català</option>
+                <option>Dansk</option>
+                <option>Deutsch</option>
+                <option>English</option>
+                <option>Español</option>
+                <option>Eλληνικά</option>
+                <option selected>Français</option>
+                <option>Italiano</option>
+                <option>Magyar</option>
+                <option>Nederlands</option>
+                <option>Norsk</option>
+                <option>Polski</option>
+                <option>Português</option>
+                <option>Suomi</option>
+                <option>Svenska</option>
+                <option>Türkçe</option>
+                <option>Íslenska</option>
+                <option>Čeština</option>
+                <option>Русский</option>
+                <option>ภาษาไทย</option>
+                <option>中文 (简体)</option>
+                <option>中文 (繁體)</option>
+                <option>日本語</option>
+                <option>한국어</option>
+              </select>
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 no-padding-mobile">
+              <select class="form-control footer-select">
+                <option>AED</option>
+                <option>ARS</option>
+                <option>AUD</option>
+                <option>BGN</option>
+                <option>BRL</option>
+                <option>CAD</option>
+                <option>CHF</option>
+                <option>CLP</option>
+                <option>CNY</option>
+                <option>COP</option>
+                <option>CRC</option>
+                <option>CZK</option>
+                <option>DKK</option>
+                <option selected>EUR</option>
+                <option>GBP</option>
+                <option>HKD</option>
+                <option>HRK</option>
+                <option>HUF</option>
+                <option>IDR</option>
+                <option>ILS</option>
+                <option>INR</option>
+                <option>JPY</option>
+                <option>KRW</option>
+                <option>MAD</option>
+                <option>MXN</option>
+                <option>MYR</option>
+                <option>NOK</option>
+                <option>NZD</option>
+                <option>PEN</option>
+                <option>PHP</option>
+                <option>PLN</option>
+                <option>RON</option>
+                <option>RUB</option>
+                <option>SAR</option>
+                <option>SEK</option>
+                <option>SGD</option>
+                <option>THB</option>
+                <option>TRY</option>
+                <option>TWD</option>
+                <option>UAH</option>
+                <option>USD</option>
+                <option>UYU</option>
+                <option>VND</option>
+                <option>ZAR</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-2 col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-2 col-lg-offset-1 col-lg-2 footer-menu-list">
+            <span class="hidden-xs">Société</span>
+            <ul class="mobile-list">
+              <li><a href="#">À propos</a></li>
+              <li><a href="#">Carrières</a></li>
+              <li><a href="#">Presse</a></li>
+              <li><a href="#">Blog</a></li>
+              <li class="hidden-xs"><a href="#">Aide</a></li>
+              <li class="hidden-xs"><a href="#">Règles</a></li>
+              <li class="hidden-xs"><a href="#">Réponse aux catastrophes</a></li>
+              <li><a href="#">Conditions générales et confidentialité</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-3 col-lg-3 footer-menu-list hidden-xs">
+            <span>Découvrir</span>
+            <ul>
+              <li><a href="#">Confiance et sécurité</a></li>
+              <li><a href="#">Crédit voyage</a></li>
+              <li><a href="#">La sélection Airbnb</a></li>
+              <li><a href="#">Application mobile</a></li>
+              <li><a href="#">Airbnb Action</a></li>
+              <li><a href="#">Voyage d'affaires</a></li>
+              <li><a href="#">Plan du site</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-2 col-lg-2 footer-menu-list hidden-xs">
+            <span>Hébergement</span>
+            <ul>
+              <li><a href="#">Pourquoi être hôte</a></li>
+              <li><a href="#">Recommandez des hôtes</a><span class="new-data"> Nouveau </span></li>
+              <li><a href="#">Hospitalité</a></li>
+              <li><a href="#">Hébergement responsable</a></li>
+              <li><a href="#">Sécurité à la maison</a></li>
+              <li><a href="#">Réservation instantanée</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-lg-offset-1 col-lg-10 custom-social flex_column">
+          <h4 class="hidden-xs">Rejoignez-nous sur</h4>
+          <div class="social">
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-facebook social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-google-plus social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-twitter social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-linkedin social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-pinterest social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-youtube-play social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+            <a class="social-link" href="#">
+              <div class="social-logo-container flex_center">
+                <i class="fa fa-instagram social-logo" aria-hidden="true"></i>
+              </div>
+            </a>
+          </div>
+          <span>&copy; Airbnb, Inc.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
